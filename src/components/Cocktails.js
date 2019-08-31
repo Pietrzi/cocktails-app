@@ -9,7 +9,7 @@ export default class Cocktails extends Component {
         super(props);
         this.state = {
             cocktails: [],
-            midUrl: 'filter.php?a=', //'popular.php'
+            midUrl: 'filter.php?a=',
             endUrl: 'Alcoholic'
         }
     }
