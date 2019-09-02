@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import {
-    Link
-  } from 'react-router-dom';
-  import BackButton from './BackButton';
+//   import BackButton from './BackButton';
 
 export default class Cocktail extends Component {
     constructor(props) {
@@ -16,14 +13,8 @@ export default class Cocktail extends Component {
         fetch('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + id)
         .then(res => res.json())
         .then(data => data.drinks[0]) 
-        .then(drink => this.setState({ cocktail: drink })); //console.log(drink));
-
-        //console.log(this.state.cocktail.strMeasure2);
+        .then(drink => this.setState({ cocktail: drink }));
     }
-
-handle = () => {
-    console.log(this.state.cocktail);
-}
 
     render() {
 
@@ -70,21 +61,15 @@ handle = () => {
         }
 
         return (
-            <div>
-                {/* <button onClick={this.handle}></button> */}
-                <Link exact to="/">Home</Link>
-                <BackButton />
-                <h1>{ this.state.cocktail.strDrink }</h1>
+            <div className="cocktail-display">
+                {/* <BackButton />  */}
+                <h2>{ this.state.cocktail.strDrink }</h2>
                 <img className="display" src={ this.state.cocktail.strDrinkThumb } alt="drink"></img>
                 <h3>Ingredients</h3>
-                {         
-                    arr.map( el => {
-                        return (
-                            <p key={this.state.cocktail.drinkID}>{el.mesaure}{el.ingredient}</p>
-                        )
-                    })
-                 }
-                <h3>Glass</h3>
+                  {         
+                    arr.map( el => el.ingredient ? <p key={this.state.cocktail.drinkID}>{el.mesaure}{el.ingredient}</p> : null)
+                  }
+                <h4>Glass</h4>
                 <p>{ this.state.cocktail.strGlass }</p>
                 <h3>Instruction</h3>
                 <p>{ this.state.cocktail.strInstructions }</p>
@@ -92,7 +77,7 @@ handle = () => {
                 <span>{ this.state.cocktail.strCategory }</span>
                 <span>{ this.state.cocktail.strIBA }</span>
                 <br/>
-                <button>Add to favourite</button>
+                {/* <button>Add to favourite</button> */}
             </div>
         )
     }

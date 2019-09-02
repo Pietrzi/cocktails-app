@@ -2,31 +2,30 @@ import React, { Component } from 'react'
 import {
     Link
   } from 'react-router-dom';
-import BackButton from './BackButton';
+// import BackButton from './BackButton';
+import { connect } from 'react-redux';
+import { fetchDrinks } from '../redux/actions';
 
-export default class Cocktails extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            cocktails: [],
-            midUrl: 'filter.php?a=',
-            endUrl: 'Alcoholic'
-        }
+class Cocktails extends Component {
+   
+    state = {
+        cocktails: [],
+        midUrl: '',
+        endUrl: ''
     }
+  
     componentDidMount() {
-        const randomNum = Math.floor(Math.random() * 231)
-        fetch('https://www.thecocktaildb.com/api/json/v1/1/' + this.state.midUrl + this.state.endUrl)
-        .then(res => res.json())
-        .then(data => this.setState({ cocktails: data.drinks.slice(randomNum, randomNum + 20) }));
+        this.props.fetchDrinks();
     }
 
     handleLetterClick = (e) => {
-        this.setState({
-            midUrl: 'search.php?f=',
-            endUrl: e.target.innerText.charAt(0).toLowerCase() 
-        }, () => {
-            this.fetchData();
-          });
+        // this.setState({
+        //     midUrl: 'search.php?f=',
+        //     endUrl: e.target.innerText.charAt(0).toLowerCase() 
+        // }, () => {
+        //     this.fetchData();
+        //   });
+        this.props.fetchDrinks('search.php?f=', e.target.innerText.charAt(0).toLowerCase())
     }
 
     fetchData = () => {
@@ -37,19 +36,22 @@ export default class Cocktails extends Component {
     }
 
     render() {
-        const cocktailsList = this.state.cocktails.map( cocktail => (
+        const cocktailsList = this.props.cocktails.map( cocktail => (
             <Link to={`/cocktail/${cocktail.idDrink}`} key={cocktail.idDrink}>
-            <div id={ cocktail.idDrink }>
+            <div id={ cocktail.idDrink } class="cocktail">
                 <img className="showcase" src={ cocktail.strDrinkThumb } alt="drink"></img>
-                <h4>{ cocktail.strDrink }</h4>
+                <h6 className="center cocktail-title">{ cocktail.strDrink }</h6>
             </div>
             </Link>
         ));
         return (
-            <div>
-                <Link exact to="/">Home</Link>
-                <BackButton />
+            <div className="container">
+              <div className="cocktails-wrapper">
+                {/* <Link exact to="/">Home</Link>
+                <BackButton /> */}
                 { cocktailsList }
+              </div>
+              <div className="letters-wrapper">
                 <span className="letters" onClick={ this.handleLetterClick }>A/</span>
                 <span className="letters" onClick={ this.handleLetterClick }>B/</span>
                 <span className="letters" onClick={ this.handleLetterClick }>C/</span>
@@ -76,9 +78,17 @@ export default class Cocktails extends Component {
                 <span className="letters" onClick={ this.handleLetterClick }>X/</span>
                 <span className="letters" onClick={ this.handleLetterClick }>Y/</span>
                 <span className="letters" onClick={ this.handleLetterClick }>Z</span>
+              </div>
             </div>
         )
     }
 }
+
+
+const mapStateToProps = state => ({
+    cocktails: state.cocktails.cocktails
+})
+
+export default connect(mapStateToProps, { fetchDrinks })(Cocktails)
 
 // https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a
