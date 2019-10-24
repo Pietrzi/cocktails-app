@@ -1,17 +1,32 @@
 const FETCH_DRINKS = "FETCH_DRINKS";
+//const REGISTER = "REGISTER"
 //const SEARCH_NAME = "SEARCH_NAME";
 
 export const fetchDrinks = (midUrl = 'popular.php', endUrl='') => dispatch => {
-    //const randomNum = Math.floor(Math.random() * 231)
+    if (midUrl === 'i') {
+        midUrl = 'filter.php?i='
+    } else if (midUrl === 'n'){
+        midUrl = 'search.php?s='
+    } else if (midUrl === 'g'){
+        midUrl = 'filter.php?g='
+    }
     fetch('https://www.thecocktaildb.com/api/json/v2/8673533/' + midUrl + endUrl) 
     .then(res => res.json())
-    // .then(data => data.drinks.slice(randomNum, randomNum + 20))
+    .then(data => data.drinks)
     .then(drinks =>{
-        dispatch({
+        dispatch ({
         type: FETCH_DRINKS,
-        payload: drinks.drinks
+        payload: drinks
     })})
 }
+
+// export const registerUser = (username, password) => ({
+//     type: REGISTER,
+//     payload: {
+//         username,
+//         password
+//     }
+// })
 
 // export const fetchDrinks = (midUrl = 'filter.php?a=', endUrl='Alcoholic') => dispatch => {
 //     fetch('https://www.thecocktaildb.com/api/json/v1/1/' + midUrl + endUrl) 
@@ -32,6 +47,8 @@ export const fetchDrinks = (midUrl = 'popular.php', endUrl='') => dispatch => {
 // }
 
 export default FETCH_DRINKS;
+
+//export default (FETCH_DRINKS, REGISTER);
 
 // key
 //https://www.thecocktaildb.com/api/json/v2/8673533/popular.php

@@ -24,10 +24,11 @@ function App() {
         <Switch>
           <Route exact path='/' component={Home} />
           {/* <Route path='/cocktails/:letter?' component={Cocktails} /> */}
-          <Route path='/cocktails/' component={Cocktails} />
+          {/* <Route path='/cocktails/' component={Cocktails} /> */}
           <Route path='/search' component={Search} />
           {/* <Route path='/add' component={Add} /> */}
           <Route path='/cocktail/:id' component={Cocktail} />
+          <Route path='/cocktails/:midurl?/:endurl?' component={Cocktails} />
           <Route path='/login' component={LogIn} />
           <Route path='/register' component={Register} />
           <Route component={NotFound} />

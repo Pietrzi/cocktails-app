@@ -6,7 +6,7 @@ import searchReducer from './searchReducer';
 const combineReducer = combineReducers({
     cocktails: cocktailsReducer,
     search: searchReducer,
-    auth: authReducer
+    users: authReducer
 })
 
 export default combineReducer;

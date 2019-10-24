@@ -3,6 +3,7 @@ const initialState = {
     ingredient: '',
     glass: '',
     midUrl: '',
+    endUrl: ''
 }
 
 const searchReducer = (state = initialState, action) => {

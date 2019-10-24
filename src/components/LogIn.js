@@ -34,7 +34,7 @@ class LogIn extends React.Component {
                         <input type="text" id='password' onChange={this.handleChange} />
                     </div>
                     <div className="input-field">
-                        <button className="btn red darken-3 z-depth-0">Log in</button>
+                        <button className="btn red darken-3 z-depth-0 adjust">Log in</button>
                         <Link to="/register">Register</Link>
                     </div>
                 </form>

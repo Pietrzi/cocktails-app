@@ -71,58 +71,13 @@ body {
   color: white;
 }
 
-
-
-/* .App {
-  text-align: center;
+.adjust {
+  margin-right: 15px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.buttons-wrapper {
+  height: 120px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-.showcase {
-  width: 200px;
-  height: 200px;
-}
-
-.display {
-  width: 400px;
-  height: 400px;
-}
-
-span {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.letters {
-  margin: 0 1px;
-  letter-spacing: 2px;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */

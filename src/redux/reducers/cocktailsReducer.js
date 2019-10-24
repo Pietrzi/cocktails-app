@@ -1,9 +1,7 @@
 import FETCH_DRINKS from '../actions';
 
 const initialState = {
-    cocktails: [],
-    midUrl: '',
-    endUrl: ''
+    cocktails: []
 }
 
 const cocktailsReducer = (state = initialState, action) => {
@@ -11,9 +9,7 @@ const cocktailsReducer = (state = initialState, action) => {
         case FETCH_DRINKS:
             return {
                 ...state,
-                cocktails: action.payload,
-                // midUrl: this.state.midUrl,
-                // endUrl: this.state.endUrl
+                cocktails: [...action.payload]
             }
         default:
             return state;
