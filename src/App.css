@@ -81,3 +81,58 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+
+@media (max-width: 756px) {
+  .letters-wrapper {
+    flex-wrap: wrap;
+  }
+  
+  .letters {
+    margin: 2 1px;
+    font-size: 33px;
+  }
+}
+
+@media (max-width: 500px) {
+  .cocktails-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .buttons-wrapper {
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+
+  .btn__group {
+    width: 42%;
+  }
+
+  .letters-wrapper {
+    flex-wrap: wrap;
+  }
+  
+  .letters {
+    margin: 2 1px;
+    font-size: 33px;
+  }
+}
+
+@media (max-width: 356px) {
+  .btn__group {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 331px) {
+  .btn__group {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 309px) {
+  .btn__group {
+    font-size: 0.7rem;
+  }
+}

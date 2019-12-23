@@ -65,10 +65,10 @@ class Cocktails extends Component {
         return (
             <div className="container">
               <div className="buttons-wrapper">
-                  <button className="btn red darken-3 z-depth-0" onClick={this.selectByPopular}>Popular</button>
-                  <button className="btn red darken-3 z-depth-0" onClick={this.selectByRecent}>Recent</button>
-                  <button className="btn red darken-3 z-depth-0" onClick={this.selectByAlcohol}>Alcohol</button>
-                  <button className="btn red darken-3 z-depth-0" onClick={this.selectByNoAlcohol}>No Alcohol</button>
+                  <button className="btn red darken-3 z-depth-0 btn__group" onClick={this.selectByPopular}>Popular</button>
+                  <button className="btn red darken-3 z-depth-0 btn__group" onClick={this.selectByRecent}>Recent</button>
+                  <button className="btn red darken-3 z-depth-0 btn__group" onClick={this.selectByAlcohol}>Alcohol</button>
+                  <button className="btn red darken-3 z-depth-0 btn__group" onClick={this.selectByNoAlcohol}>No Alcohol</button>
               </div>
               <div className="cocktails-wrapper">
                 {/* <Link exact to="/">Home</Link>
