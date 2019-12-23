@@ -1,23 +1,21 @@
-import React, { Component } from 'react';
-//   import BackButton from './BackButton';
+import React, { Component } from 'react'
 
-export default class Cocktail extends Component {
+export default class Test extends Component {
     constructor(props) {
-        super(props);
-        this.state = {
-            cocktail: {}
-        }
+    super(props);
+    this.state = {
+        cocktail: {}
     }
-    componentDidMount() {
-        let id = this.props.match.params.id;
-        fetch('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + id)
-        .then(res => res.json())
-        .then(data => data.drinks[0]) 
-        .then(drink => this.setState({ cocktail: drink }));
-    }
+}
+componentDidMount() {
+    let id = this.props.match.params.id;
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + id)
+    .then(res => res.json())
+    .then(data => data.drinks[0]) 
+    .then(drink => this.setState({ cocktail: drink }));
+}
 
     render() {
-
         const drinkIngredients = {
             measure1: this.state.cocktail.strMeasure1,
             measure2: this.state.cocktail.strMeasure2,
@@ -59,9 +57,9 @@ export default class Cocktail extends Component {
                 ingredient: drinkIngredients["ingredient" + i]           
             })
         }
-
         return (
-            <div className="cocktail-display">
+            <div>
+                <div className="cocktail-display">
                 {/* <BackButton />  */}
                 <h2>{ this.state.cocktail.strDrink }</h2>
                 <img className="display" src={ this.state.cocktail.strDrinkThumb } alt="drink"></img>
@@ -79,8 +77,7 @@ export default class Cocktail extends Component {
                 <br/>
                 {/* <button>Add to favourite</button> */}
             </div>
+            </div>
         )
     }
 }
-
-

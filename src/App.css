@@ -1,26 +1,26 @@
-.App {
-  text-align: center;
+body {
+  background-color: black;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.for-image {
+  width: 100%;
+  background-image: url('images/drinks1.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: calc(100vh - 64px);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cocktails-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.cocktail {
+  width: 200px;
+  background: black;
+  margin-top: 30px;
 }
 
 .showcase {
@@ -28,26 +28,56 @@
   height: 200px;
 }
 
+.cocktail-title {
+  color: white;
+}
+
+.letters-wrapper {
+  width: auto;
+  margin: 30px 0px;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.letters {
+  color: white;
+  margin: 0 1px;
+  letter-spacing: 2px;
+  font-size: 23px;
+}
+
+.letters:hover {
+  cursor: pointer;
+}
+
+.cocktail-display {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .display {
   width: 400px;
   height: 400px;
 }
 
-span {
-  margin-left: 10px;
-  margin-right: 10px;
+.search-form {
+  margin-top: 50px;
 }
 
-.letters {
-  margin: 0 1px;
-  letter-spacing: 2px;
+.input-field [type=text] {
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.adjust {
+  margin-right: 15px;
+}
+
+.buttons-wrapper {
+  height: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
