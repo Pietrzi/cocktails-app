@@ -2,14 +2,17 @@
   "name": "cocktails-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://pietrzi.cocktails-app.io",
   "dependencies": {
-    "materialize-css": "^1.0.0-rc.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-redux": "^7.1.1",
-    "react-router-dom": "^5.0.1",
+    "gh": "^2.8.3",
+    "materialize-css": "^1.0.0",
+    "pages": "0.0.16",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.1.1",
-    "redux": "^4.0.4",
+    "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "thunk": "0.0.1"
   },
@@ -17,6 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
