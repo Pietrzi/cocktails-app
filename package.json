@@ -2,7 +2,7 @@
   "name": "cocktails-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pietrzi.cocktails-app.io",
+  "homepage": "https://pietrzi.github.io/cocktails-app",
   "dependencies": {
     "gh": "^2.8.3",
     "materialize-css": "^1.0.0",
@@ -20,7 +20,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
