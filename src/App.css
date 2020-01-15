@@ -82,9 +82,19 @@ body {
   align-items: center;
 }
 
+@media (max-width: 989px) {
+  .brand-logo {
+    margin-left: 70px;
+  }
+}
+
 @media (max-width: 756px) {
   .letters-wrapper {
     flex-wrap: wrap;
+  }
+
+  .brand-logo {
+    margin-left: 50px;
   }
   
   .letters {
@@ -98,6 +108,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .brand-logo {
+    margin-left: 20px;
   }
 
   .buttons-wrapper {
