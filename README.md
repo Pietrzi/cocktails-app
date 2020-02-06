@@ -5,6 +5,4 @@ Application styled only a little in Materialize(just wanted to check something o
 Created with React and Redux app explores nice API about cocktails. You can search drinks by names, groups, letter
 or glass and ingredient.
 
-Not responsive yet and tiny bugs may appaer rarely I hope;)
-
 Happy Drinking!
